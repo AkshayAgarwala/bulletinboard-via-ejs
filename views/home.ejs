@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+
+</head>
+<body>
+  <h1>Please Write Your Message</h1>
+  <h5><a href=<%="/board"%>>View All Messages!</a></h5>
+
+  <ul>
+    <% for (var i = 0; i < messages.length; i++){ %>
+        <li> <a href= <%= "/messages/"+messages[i].id %>> <%= messages[i].title %> </a></li>
+    <% } %>
+  </ul>
+
+  <form action="/messages" method = "POST">
+    <input type="text" name = "title" placeholder="Title...">
+    <br>
+    <br>
+    <textarea name="message" cols="100" rows="5" placeholder="Enter Message..."></textarea>
+    <br>
+    <input type="submit" value = "Submit Message">
+  </form>
+
+</body>
+</html>
